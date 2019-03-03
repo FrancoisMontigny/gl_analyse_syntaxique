@@ -1,9 +1,8 @@
-#include "DefaultState.h"
-#include "State1.h"
+#include "State6.h"
 #include "State2.h"
 #include "State3.h"
 
-bool DefaultState::transition(Automaton & automaton, Symbole * s) {
+bool State2::transition(Automaton & automaton, Symbole * s) {
 	switch (*s) {
 	case CLOSEPAR:
 		break;
@@ -22,7 +21,7 @@ bool DefaultState::transition(Automaton & automaton, Symbole * s) {
 		automaton.decalage(s, new State2("E2"));
 		break;
 	case EXPRESSION:
-		automaton.decalage(s, new State1("E1"));
+		automaton.decalage(s, new State1("E6"));
 		break;
 	default:
 		break;
