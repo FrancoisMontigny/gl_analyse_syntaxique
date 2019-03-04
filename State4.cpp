@@ -1,4 +1,4 @@
-#include "State6.h"
+#include "State7.h"
 #include "State2.h"
 #include "State3.h"
 
@@ -21,7 +21,7 @@ bool State2::transition(Automaton & automaton, Symbole * s) {
 		automaton.decalage(s, new State2("E2"));
 		break;
 	case EXPRESSION:
-		automaton.decalage(s, new State6("E6"));
+		automaton.decalage(s, new State7("E7"));
 		break;
 	default:
 		break;

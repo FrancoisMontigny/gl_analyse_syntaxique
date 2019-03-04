@@ -1,27 +1,27 @@
-#include "State6.h"
+#include "State5.h"
 #include "State2.h"
-#include "State3.h"
 
-bool State2::transition(Automaton & automaton, Symbole * s) {
+bool State7::transition(Automaton & automaton, Symbole * s) {
 	switch (*s) {
 	case CLOSEPAR:
+		automaton.reduction(2, CLOSEPAR);
 		break;
 	case PLUS:
+		automaton.reduction(2, PLUS);
 		break;
 	case MULT:
+		automaton.decalage(s, new State5("E5"));
 		break;
-	case FIN: 
+	case FIN:
+		automaton.reduction(2, FIN);
 		break;
 	case ERREUR:
 		break;
 	case INT:
-		automaton.decalage(s, new State3("E3"));
 		break;
 	case OPENPAR:
-		automaton.decalage(s, new State2("E2"));
 		break;
 	case EXPRESSION:
-		automaton.decalage(s, new State6("E6"));
 		break;
 	default:
 		break;
