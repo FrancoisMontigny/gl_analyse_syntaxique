@@ -7,12 +7,12 @@
 
 using namespace std;
 
-class State9 : public State {
+class State8 : public State {
 
 public:
-	State9() {}
-	State9(const string name):State(name) {}
-	virtual ~State9() {}
+	State8() {}
+	State8(const string name):State(name) {}
+	virtual ~State8() {}
 
 	bool transition(Automaton & automaton, Symbole * s);
 };

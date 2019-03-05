@@ -1,6 +1,8 @@
+#pragma once
 #include "State9.h"
 #include "State4.h"
 #include "State5.h"
+#include "State6.h"
 
 bool State6::transition(Automaton & automaton, Symbole * s) {
 

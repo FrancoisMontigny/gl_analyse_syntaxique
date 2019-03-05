@@ -16,6 +16,8 @@ public:
 	void decalage(Symbole * s, State *st);
 	State * currentState();
 	void reduction (int n, Symbole *s);
+	Expression * popSymbol();
+	void popAndDestroySymbol();
 
 protected:
 	deque<State *> states;

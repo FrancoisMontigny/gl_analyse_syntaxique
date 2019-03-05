@@ -1,8 +1,10 @@
+#pragma once
 #include "State8.h"
 #include "State2.h"
 #include "State3.h"
+#include "State5.h"
 
-bool State2::transition(Automaton & automaton, Symbole * s) {
+bool State5::transition(Automaton & automaton, Symbole * s) {
 	switch (*s) {
 	case CLOSEPAR:
 		break;

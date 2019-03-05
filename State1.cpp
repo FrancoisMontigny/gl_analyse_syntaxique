@@ -1,3 +1,4 @@
+#pragma once
 #include "State1.h"
 #include "State4.h"
 #include "State5.h"

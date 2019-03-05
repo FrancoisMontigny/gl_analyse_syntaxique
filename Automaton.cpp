@@ -17,14 +17,26 @@ void Automaton::decalage(Symbole * s, State *st){
 
 void Automaton::reduction(int n, Symbole * s){
 	for(int i=0; i<n; i++){
-		delete(states.back());
+		State * suppr = states.back();
+		delete(suppr);
 		states.pop_back();
 	}
 	states.back()->transition(*this,s);
+}
+
+Expression * Automaton::popSymbol(){
+	Expression * exp = (Expression*) symbols.back();
+	symbols.pop_back();
+	return exp;
 }
 
 State * Automaton::currentState(){
 	return states.back();
 }
 
+void Automaton::popAndDestroySymbol(){
+	Symbole * aSuppr = symbols.back();
+	symbols.pop_back();
+	delete(aSuppr);
+}
 

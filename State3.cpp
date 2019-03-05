@@ -1,20 +1,24 @@
-#include "State5.h"
-#include "State2.h"
+#pragma once
 #include "State3.h"
 
-bool State2::transition(Automaton & automaton, Symbole * s) {
+bool State3::transition(Automaton & automaton, Symbole * s) {
 	switch (*s) {
+	Expression * s1;
 	case CLOSEPAR: 
-		automaton.reduction(5, CLOSEPAR);
+		s1 = automaton.popSymbol();
+		automaton.reduction(1, s1);
 		break;
 	case PLUS: 
-		automaton.reduction(5, PLUS);
+		s1 = automaton.popSymbol();
+		automaton.reduction(1, s1);
 		break;
 	case MULT: 
-		automaton.reduction(5, MULT);
+		s1 = automaton.popSymbol();
+		automaton.reduction(1, s1);
 		break;
 	case FIN: 
-		automaton.reduction(5, FIN);
+		s1 = automaton.popSymbol();
+		automaton.reduction(1, s1);
 		break;
 	case ERREUR:
 		break;
