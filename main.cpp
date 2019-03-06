@@ -22,10 +22,7 @@ int main(void) {
 	DefaultState ds("default");
 	Expression *e = new Expression();
 	Automaton a (&l, &ds);
-	a.currentState()->print();
-	ds.transition(a, e);
-	a.reduction(1,e);
-	a.currentState()->print();
+
 	return 0;
 }
 
