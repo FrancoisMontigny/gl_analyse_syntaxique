@@ -22,7 +22,7 @@ int main(void) {
 	DefaultState ds("default");
 	Expression *e = new Expression();
 	Automaton a (&l, &ds);
-
+	//TODO ajouter fonction qui lit une expr dans Automaton
 	return 0;
 }
 
