@@ -24,6 +24,16 @@ void Automaton::reduction(int n, Symbole * s){
 	states.back()->transition(*this,s);
 }
 
+bool Automaton::lecture(Expression *toRead){
+	currentState()->print();
+	//TODO : Fonction qui reccupere le prochain symbole de toRead et lemet dans symbols
+	while(!states.back()->transition(*this, symbols.back())){
+		currentState()->print();
+		//TODO : Fonction qui reccupere le prochain symbole de toRead et lemet dans symbols
+	}
+	return true;
+}
+
 Expression * Automaton::popSymbol(){
 	Expression * exp = (Expression*) symbols.back();
 	symbols.pop_back();

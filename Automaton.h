@@ -19,6 +19,8 @@ public:
 	Expression * popSymbol();
 	void popAndDestroySymbol();
 
+	bool lecture(Expression * toRead);
+
 protected:
 	deque<State *> states;
 	deque<Symbole *> symbols;

@@ -7,6 +7,7 @@
 #include "Automaton.h"
 #include "Symbole.h"
 
+
 int main(void) {
 	string chaine("(1+34)*123");
 
@@ -14,15 +15,18 @@ int main(void) {
 
 	Symbole * s;
 	while (*(s = l.Consulter()) != FIN) {
-		s->Affiche();
-		cout << endl;
+		//s->Affiche();
+		//cout << endl;
 		l.Avancer();
 	}
 
 	DefaultState ds("default");
-	Expression *e = new Expression();
-	Automaton a (&l, &ds);
-	//TODO ajouter fonction qui lit une expr dans Automaton
+	Entier * a = new Entier(1);
+	Entier * b = new Entier(2);
+	Expression *e = new ExprPlus(a,b);
+	Automaton aut (&l, &ds);
+	bool result = aut.lecture(e);
+	cout << aut.currentState() << endl;
 	return 0;
 }
 

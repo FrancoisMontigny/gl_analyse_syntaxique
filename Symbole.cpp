@@ -44,3 +44,5 @@ void Entier::Affiche() {
 	cout << "(" << valeur << ")";
 }
 
+
+

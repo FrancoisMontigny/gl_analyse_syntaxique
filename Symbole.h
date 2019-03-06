@@ -22,12 +22,14 @@ class Symbole {
 class Expression : public Symbole {
 	public:
 		Expression():Symbole(EXPRESSION){}
+		Expression(int v):Symbole(EXPRESSION), valeur(v){}
 		virtual ~Expression(){}
 		virtual void Affiche();
 		bool isTerminal();
 		int getValeur();
 	protected :
-		int valeur;
+	   		int valeur;
+
 };
 
 class Entier : public Expression {
@@ -35,6 +37,7 @@ class Entier : public Expression {
       Entier(int v);
       ~Entier() { }
       virtual void Affiche();
+
 };
 
 class ExprPlus : public Expression {
